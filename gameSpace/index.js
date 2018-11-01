@@ -4,6 +4,8 @@ import { WebView } from 'react-native';
 import {
   AppRegistry,
   StyleSheet,
+  Entity,
+  asset,
   Text,
   View,
 } from 'react-360';
@@ -22,20 +24,20 @@ import {
 //   }
 // };
 
-export default class MyInlineWeb extends Component {
+var hello = "Hello You!!";
+
+export default class SimpleGame extends React.Component {
   render() {
     return (
       <View style={styles.panel}>
-      <WebView
-        originWhitelist={['*']}
-        source={{ html: '<h1>Hello world</h1>' }}
-      />
+        <Text>Hello Everyone</Text>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+
   panel: {
     // Fill the entire surface
     width: 1000,
@@ -55,4 +57,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('gameSpace', () => gameSpace);
+AppRegistry.registerComponent('SimpleGame', () => SimpleGame);

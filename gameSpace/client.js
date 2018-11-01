@@ -12,7 +12,7 @@ function init(bundle, parent, options = {}) {
 
   // Render your app content to the default cylinder surface
   r360.renderToSurface(
-    r360.createRoot('MyInlineWeb', { /* initial props */ }),
+    r360.createRoot('SimpleGame', { /* initial props */ }),
     r360.getDefaultSurface()
   );
 
