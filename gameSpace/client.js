@@ -2,6 +2,8 @@
 // If you want to modify your application's content, start in "index.js"
 
 import {ReactInstance} from 'react-360-web';
+import {Location} from 'react-360-web';
+// import Entity from 'Entity';
 
 function init(bundle, parent, options = {}) {
   const r360 = new ReactInstance(bundle, parent, {
@@ -10,14 +12,23 @@ function init(bundle, parent, options = {}) {
     ...options,
   });
 
-  // Render your app content to the default cylinder surface
-  r360.renderToSurface(
-    r360.createRoot('SimpleGame', { /* initial props */ }),
-    r360.getDefaultSurface()
+  // Render your app content to the default location
+  // r360.renderToLocation(
+  //   r360.createRoot('gameSpace', {/* initial props */}),
+  //   r360.getDefaultLocation(),
+  // );
+
+  //custom location
+  const location = new Location([0, -40, -40]);
+
+  r360.renderToLocation(
+    r360.createRoot('gameSpace', {/* initial props */}),
+    location,
   );
+ 
 
   // Load the initial environment
-  r360.compositor.setBackground(r360.getAssetURL('360_world.jpg'));
+  r360.compositor.setBackground(r360.getAssetURL('Arizona.jpg'));
 }
 
 window.React360 = {init};

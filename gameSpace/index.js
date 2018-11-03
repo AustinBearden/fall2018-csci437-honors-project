@@ -1,40 +1,21 @@
 import React from 'react';
-import { Component } from 'react';
-import { WebView } from 'react-native';
 import {
   AppRegistry,
   StyleSheet,
-  Entity,
   asset,
-  Text,
-  View,
+  View
 } from 'react-360';
+import Entity from 'Entity';
 
-// export default class gameSpace extends React.Component {
-//   render() {
-//     return (
-//       <View style={styles.panel}>
-//         <View style={styles.greetingBox}>
-//           <Text style={styles.greeting}>
-//             Welcome to React 360
-//           </Text>
-//         </View>
-//       </View>
-//     );
-//   }
-// };
-
-var hello = "Hello You!!";
-
-export default class SimpleGame extends React.Component {
+export default class gameSpace extends React.Component {
   render() {
     return (
-      <View style={styles.panel}>
-        <Text>Hello Everyone</Text>
+      <View>
+        <Entity source={{obj: asset('FooseballApplied.obj'), mtl: asset('FooseballApplied.mtl')}}/>
       </View>
     );
   }
-}
+};
 
 const styles = StyleSheet.create({
 
@@ -57,4 +38,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('SimpleGame', () => SimpleGame);
+AppRegistry.registerComponent('gameSpace', () => gameSpace);
