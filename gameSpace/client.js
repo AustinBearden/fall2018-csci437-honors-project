@@ -19,12 +19,15 @@ function init(bundle, parent, options = {}) {
   // );
 
   //custom location
-  const location = new Location([0, -40, -40]);
+  const location = new Location([0, 10, 10]);
 
   r360.renderToLocation(
     r360.createRoot('gameSpace', {/* initial props */}),
     location,
   );
+
+  location.setWorldPosition(20,3,4);
+  location.setWorldRotation(3, 0, 3);
  
 
   // Load the initial environment

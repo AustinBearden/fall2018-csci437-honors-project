@@ -3,15 +3,17 @@ import {
   AppRegistry,
   StyleSheet,
   asset,
-  View
+  View,
+  Text
 } from 'react-360';
 import Entity from 'Entity';
 
 export default class gameSpace extends React.Component {
   render() {
     return (
-      <View>
-        <Entity source={{obj: asset('FooseballApplied.obj'), mtl: asset('FooseballApplied.mtl')}}/>
+      <View style={styles.panel}>
+        {/* <Entity source={{obj: asset('FooseballApplied.obj'), mtl: asset('FooseballApplied.mtl')}}/> */}
+        <Text>Hey</Text>
       </View>
     );
   }
@@ -23,7 +25,7 @@ const styles = StyleSheet.create({
     // Fill the entire surface
     width: 1000,
     height: 600,
-    backgroundColor: 'rgba(255, 255, 255, 0.4)',
+    backgroundColor: '#800000',
     justifyContent: 'center',
     alignItems: 'center',
   },
