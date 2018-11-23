@@ -22,103 +22,59 @@ function init(bundle, parent, options = {}) {
   // Render content1 to flat surface
   const content1 = new Surface();
   content1.setShape(Surface.SurfaceShape.Flat);
-  content1.resize(400, 400);
+  content1.resize(4000, 500);
   r360.renderToSurface(
     r360.createRoot('contentOne', { /* initial props */ }),
     content1
   );
 
   content1.setAngle(
-    0,
+    -Math.PI / 2,
     0
   );
 
   // Render content2 to flat surface
   const content2 = new Surface();
   content2.setShape(Surface.SurfaceShape.Flat);
-  content2.resize(400, 400);
+  content2.resize(4000, 500);
   r360.renderToSurface(
     r360.createRoot('contentTwo', { /* initial props */ }),
     content2
   );
 
   content2.setAngle(
-    -Math.PI / 6, // horizontal angle
+    +Math.PI / 2, // horizontal angle
     0 // vertical angle
   );
 
   // Render content3 to flat surface
   const content3 = new Surface();
   content3.setShape(Surface.SurfaceShape.Flat);
-  content3.resize(400, 400);
+  content3.resize(1000, 300);
   r360.renderToSurface(
     r360.createRoot('contentThree', { /* initial props */ }),
     content3
   );
 
   content3.setAngle(
-    +Math.PI / 6, // horizontal angle
+    0, // horizontal angle
     0 // vertical angle
   );
 
-  // Render content4 to flat surface
-  const content4 = new Surface();
-  content4.setShape(Surface.SurfaceShape.Flat);
-  content4.resize(400, 400);
+  // floor surface
+  const floorMenuSur = new Surface();
+  floorMenuSur.setShape(Surface.SurfaceShape.Flat);
+  floorMenuSur.resize(6000, 8000);
   r360.renderToSurface(
-    r360.createRoot('contentFour', { /* initial props */ }),
-    content4
+    r360.createRoot('floorMenu', { /* initial props */}),
+    floorMenuSur
   );
 
-  content4.setAngle(
+  floorMenuSur.setAngle(
     0, // horizontal angle
-    Math.PI / 8 // vertical angle
+    -Math.PI / 2 // vertical angle
   );
 
-  // Render content5 to flat surface
-  const content5 = new Surface();
-  content5.setShape(Surface.SurfaceShape.Flat);
-  content5.resize(400, 400);
-  r360.renderToSurface(
-    r360.createRoot('contentFive', { /* initial props */ }),
-    content5
-  );
-
-  content5.setAngle(
-    -Math.PI / 6, // horizontal angle
-    Math.PI / 8 // vertical angle
-  );
-  
-  // Render content6 to flat surface
-  const content6 = new Surface();
-  content6.setShape(Surface.SurfaceShape.Flat);
-  content6.resize(400, 400);
-  r360.renderToSurface(
-    r360.createRoot('contentSix', { /* initial props */ }),
-    content6
-  );
-
-  content6.setAngle(
-    +Math.PI / 6, // horizontal angle
-    Math.PI / 8 // vertical angle
-  );
-
-  // Render controlPanel to flat surface
-  const controlPanel = new Surface();
-  controlPanel.setShape(Surface.SurfaceShape.Flat);
-  controlPanel.resize(600, 300);
-  r360.renderToSurface(
-    r360.createRoot('controlPanel', { /* initial props */}),
-    controlPanel
-  );
-
-  controlPanel.setAngle(
-    0, // horizontal angle
-    -Math.PI / 6 // vertical angle
-
-  );
-
-  
   // Load the initial environment
   r360.compositor.setBackground(r360.getAssetURL('360_world.jpg'));
 }
